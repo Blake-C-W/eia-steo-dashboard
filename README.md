@@ -3,6 +3,9 @@
 A dashboard for scraping EIA Short-Term Energy Outlook (STEO) data and
 tracking natural gas market data and forecast accuracy over time.
 
+![Overview demo](Demo1.png)
+![Accuracy demo](Demo2.png)
+
 ## Setup
 
 ### 1. Backend (Python)
