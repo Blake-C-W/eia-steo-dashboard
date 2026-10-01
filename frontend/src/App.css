@@ -1,0 +1,500 @@
+.app-layout {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 12px);
+  min-height: 0;
+  overflow: hidden;
+  background: #f5f5f3;
+  border: 1px solid #dededb;
+  border-radius: 16px;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100%;
+  min-height: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fbfbfa;
+  border-right: 1px solid #e4e4e1;
+  padding: 24px 16px 20px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 24px;
+  padding: 4px 8px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #15181c;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: transparent;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-section {
+  margin: 18px 10px 8px;
+  padding-bottom: 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #8b9098;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #e4e4e1;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #454b54;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.nav-item:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.nav-item.active {
+  background: #eaf2ff;
+  border-color: #c7d9ff;
+  color: #1555d8;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.nav-item--success {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item--error {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #991b1b;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 28px 30px 32px;
+  background: #f5f5f3;
+  overflow-y: auto;
+}
+
+.main-content::before {
+  content: "Natural Gas Fundamentals";
+  display: block;
+  margin-bottom: 24px;
+  color: #16191d;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.overview-chart-card {
+  grid-column: span 6;
+  min-width: 0;
+  height: 390px;
+  padding: 20px 20px 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e4e5e7;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.045);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.overview-chart-card:hover {
+  transform: translateY(-1px);
+  border-color: #d8dade;
+  box-shadow: 0 12px 34px rgba(17, 24, 39, 0.07);
+}
+
+.chart-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.chart-card-title {
+  min-width: 0;
+}
+
+.overview-chart-card h3 {
+  margin: 0;
+  color: #171a1f;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.chart-card-subtitle {
+  margin: 5px 0 0;
+  color: #9197a1;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.chart-badge {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border: 1px solid #e8e9ec;
+  border-radius: 999px;
+  background: #fafafa;
+  color: #777e88;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.chart-tooltip {
+  padding: 10px 12px;
+  background: rgba(20, 24, 31, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+}
+
+.chart-tooltip-date {
+  margin-bottom: 4px;
+  color: #b8bec8;
+  font-size: 11px;
+}
+
+.chart-tooltip-value {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .overview-chart-card {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    padding: 24px 20px;
+  }
+}
+
+.overview-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -58px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.date-range-picker {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 5px 6px 5px 10px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2e4e8;
+  border-radius: 13px;
+  box-shadow: 0 3px 12px rgba(17, 24, 39, 0.035);
+}
+
+.date-range-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: #6f7783;
+}
+
+.date-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 8px;
+  color: #8a919c;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.date-field input {
+  width: 122px;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  color: #262b33;
+  font-size: 12px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.date-field input::-webkit-calendar-picker-indicator {
+  opacity: 0.45;
+  cursor: pointer;
+}
+
+.date-range-divider {
+  width: 1px;
+  height: 22px;
+  background: #e6e8eb;
+}
+
+.date-reset-button {
+  min-width: 38px;
+  height: 30px;
+  margin-left: 5px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 9px;
+  background: #eef4ff;
+  color: #1555d8;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.date-reset-button:hover {
+  background: #e2ecff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .overview-toolbar {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+
+  .date-range-picker {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+/* Add these rules to the end of your existing App.css */
+
+.chart-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.chart-select {
+  height: 30px;
+  max-width: 155px;
+  padding: 0 28px 0 10px;
+  border: 1px solid #e5e8ed;
+  border-radius: 9px;
+  background: #fbfbfc;
+  color: #535b67;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  min-height: 18px;
+  margin: -2px 0 8px;
+  color: #7f8792;
+  font-size: 10.5px;
+  font-weight: 550;
+}
+
+.chart-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-line {
+  display: inline-block;
+  width: 18px;
+  height: 0;
+  border-top: 2px solid #246bfd;
+  border-radius: 999px;
+}
+
+.legend-line--forecast {
+  border-top-style: dashed;
+}
+
+.legend-line--average {
+  border-top-color: #8d96a5;
+  border-top-style: dashed;
+}
+
+.legend-band {
+  width: 18px;
+  height: 8px;
+  border-radius: 3px;
+  background: rgba(170, 180, 197, 0.22);
+  border: 1px solid rgba(170, 180, 197, 0.28);
+}
+
+.chart-tooltip {
+  min-width: 140px;
+}
+
+.chart-tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 5px;
+  color: #c8ced7;
+  font-size: 11px;
+}
+
+.chart-tooltip-row strong {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Per-chart filters */
+.chart-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: -2px 0 8px;
+  min-height: 34px;
+}
+
+.chart-filter-row .chart-legend {
+  margin: 0;
+  flex: 1 1 220px;
+}
+
+.chart-date-picker {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 3px 4px 3px 8px;
+  border: 1px solid #e7e9ed;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.chart-date-field {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #979da6;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+.chart-date-field input {
+  width: 105px;
+  padding: 4px 2px;
+  border: 0;
+  background: transparent;
+  color: #4d5561;
+  font-size: 10.5px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.chart-date-field input::-webkit-calendar-picker-indicator {
+  opacity: 0.45;
+  cursor: pointer;
+}
+
+.chart-date-separator {
+  color: #c2c6cd;
+  font-size: 11px;
+}
+
+.chart-date-reset {
+  height: 25px;
+  min-width: 34px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 7px;
+  background: #eef4ff;
+  color: #1555d8;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chart-date-reset:hover {
+  background: #e2ecff;
+}
+
+@media (max-width: 1250px) {
+  .chart-filter-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
